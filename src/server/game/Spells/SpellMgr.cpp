@@ -4592,7 +4592,7 @@ void SpellMgr::LoadSpellInfoCorrections()
     // Domination Chain (Player)
     ApplySpellFix({ 349451 }, [](SpellInfo* spellInfo)
     {
-        spellInfo->AttributesEx2 |= SPELL_ATTR2_CAN_TARGET_NOT_IN_LOS;
+        spellInfo->AttributesEx2 |= SPELL_ATTR2_IGNORE_LINE_OF_SIGHT;
     });
 
     // Rive Marker
@@ -4604,7 +4604,7 @@ void SpellMgr::LoadSpellInfoCorrections()
     // Banshee Wail (Marker)
     ApplySpellFix({ 357719 }, [](SpellInfo* spellInfo)
     {
-        spellInfo->Attributes |= SPELL_ATTR0_NEGATIVE_1;
+        spellInfo->Attributes |= SPELL_ATTR0_AURA_IS_DEBUFF;
     });
 
     // END OF SANCTUM OF DOMINATION
