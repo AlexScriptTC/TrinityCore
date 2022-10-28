@@ -31,7 +31,7 @@ ObjectData const creatureData[] =
     { NPC_JAINA_PROUDMOORE_PINNACLE,   DATA_JAINA_PROUDMOORE_PINNACLE   },
     { NPC_THRALL_PINNACLE,             DATA_THRALL_PINNACLE             },
     { NPC_ANDUIN_CRUCIBLE,             DATA_ANDUIN_CRUCIBLE             },
-    { NPC_SYLVANAS_SHADOWCOPY_RIDING,  DATA_SYLVANAS_SHADOWCOPY_RIDING  },
+    { NPC_SYLVANAS_SHADOW_COPY_RIDING, DATA_SYLVANAS_SHADOW_COPY_RIDING  },
     { 0,                               0                                } // END
 };
 
@@ -63,11 +63,11 @@ public:
                     SylvanasGUID = creature->GetGUID();
                     break;
 
-                case NPC_SYLVANAS_SHADOWCOPY_RIDING:
+                case NPC_SYLVANAS_SHADOW_COPY_RIDING:
                     SylvanasShadowcopyRidingGUID = creature->GetGUID();
                     break;
 
-                case NPC_SYLVANAS_SHADOWCOPY_FIGHTER:
+                case NPC_SYLVANAS_SHADOW_COPY_FIGHTERS:
                     SylvanasShadowcopyGUIDs.push_back(creature->GetGUID());
                     break;
 
@@ -126,32 +126,9 @@ public:
             {
                 case DATA_SYLVANAS_WINDRUNNER:
                     return SylvanasGUID;
-                case DATA_SYLVANAS_SHADOWCOPY_RIDING:
+                case DATA_SYLVANAS_SHADOW_COPY_RIDING:
                     return SylvanasShadowcopyRidingGUID;
-                case DATA_SYLVANAS_SHADOWCOPY_01:
-                    return SylvanasShadowcopyGUIDs[0];
-                case DATA_SYLVANAS_SHADOWCOPY_02:
-                    return SylvanasShadowcopyGUIDs[1];
-                case DATA_SYLVANAS_SHADOWCOPY_03:
-                    return SylvanasShadowcopyGUIDs[2];
-                case DATA_SYLVANAS_SHADOWCOPY_04:
-                    return SylvanasShadowcopyGUIDs[3];
-                case DATA_SYLVANAS_SHADOWCOPY_05:
-                    return SylvanasShadowcopyGUIDs[4];
-                case DATA_SYLVANAS_SHADOWCOPY_06:
-                    return SylvanasShadowcopyGUIDs[5];
-                case DATA_SYLVANAS_SHADOWCOPY_07:
-                    return SylvanasShadowcopyGUIDs[6];
-                case DATA_SYLVANAS_SHADOWCOPY_08:
-                    return SylvanasShadowcopyGUIDs[7];
-                case DATA_SYLVANAS_SHADOWCOPY_09:
-                    return SylvanasShadowcopyGUIDs[8];
-                case DATA_SYLVANAS_SHADOWCOPY_10:
-                    return SylvanasShadowcopyGUIDs[9];
-                case DATA_SYLVANAS_SHADOWCOPY_11:
-                    return SylvanasShadowcopyGUIDs[10];
-                case DATA_SYLVANAS_SHADOWCOPY_12:
-                    return SylvanasShadowcopyGUIDs[11];
+                
                 case DATA_BOLVAR_FORDRAGON_PINNACLE:
                     return BolvarPinnacleGUID;
                 case DATA_JAINA_PROUDMOORE_PINNACLE:
@@ -272,6 +249,28 @@ public:
                     }
                     break;
                 }
+
+                case DATA_CENTER_PLATFORM:
+                {
+                    switch (data)
+                    {
+                    case IN_PROGRESS:
+                    {
+
+                        break;
+                    }
+
+                    case DONE:
+                    {
+
+                        break;
+                    }
+
+                    default:
+                        break;
+                    }
+                    break;
+                }
                 default:
                     break;
             }
@@ -293,8 +292,9 @@ public:
                         {
                             if (Player* player = itr->GetSource())
                             {
-                                if (player->GetAreaId() != AREA_PINNACLE_OF_DOMINANCE)
                                     player->NearTeleportTo(SylvanasPlatformRevivePos, false);
+                                    player->RepopAtGraveyard();
+                                    player->ResurrectPlayer(100.0f, false);
                             }
                         }
 

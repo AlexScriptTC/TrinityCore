@@ -35,13 +35,20 @@ enum SanctumOfDominationDataTypes
 
     // Sylvanas Windrunner
     DATA_SYLVANAS_INTRO,
+    DATA_CENTER_PLATFORM,
     DATA_BOLVAR_FORDRAGON_PINNACLE,
     DATA_JAINA_PROUDMOORE_PINNACLE,
     DATA_THRALL_PINNACLE,
+    DATA_MAWFORGED_GOLIATH,
+    DATA_MAWFORGED_SOULJUDGE,
+    DATA_MAWFORGED_SUMMONER,
+    DATA_DECREPIT_ORB,
+    DATA_MAWSWORN_VANGUARD,
+    DATA_MAWSWORN_HOPEBREAKER,
     DATA_ANDUIN_CRUCIBLE,
     DATA_DOMINATION_ARROW,
 
-    DATA_SYLVANAS_SHADOWCOPY_RIDING,
+    DATA_SYLVANAS_SHADOW_COPY_RIDING,
 
     DATA_SYLVANAS_SHADOWCOPY_01                     = 20,
     DATA_SYLVANAS_SHADOWCOPY_02,
@@ -58,6 +65,12 @@ enum SanctumOfDominationDataTypes
     DATA_SYLVANAS_SHADOWCOPY_13
 };
 
+enum InvigoratingFieldTriggers
+{
+    AT_NECROLORD_RIGHT = 10,
+
+};
+
 enum SanctumOfDominationCreatureIds
 {
     // Bosses
@@ -69,11 +82,17 @@ enum SanctumOfDominationCreatureIds
     NPC_THRALL_PINNACLE                             = 176532,
     NPC_ANDUIN_CRUCIBLE                             = 178072,
 
-    NPC_SYLVANAS_SHADOWCOPY_RIDING                  = 178355,
-    NPC_SYLVANAS_SHADOWCOPY_FIGHTER                 = 176369,
+    NPC_SYLVANAS_SHADOW_COPY_RIDING = 178355,
+    NPC_SYLVANAS_SHADOW_COPY_FIGHTERS = 176369,
     NPC_SYLVANAS_JAILER_SOUL                        = 179262,
 
-    NPC_DOMINATION_ARROW                            = 176920
+    NPC_DOMINATION_ARROW                            = 176920,
+    NPC_MAWFORGED_GOLIATH                           = 177892,
+    NPC_MAWFORGED_SOULJUDGE                         = 177889,
+    NPC_MAWFORGED_SUMMONER                          = 177891,
+    NPC_MAWSWORN_HOPEBREAKER                        = 177787,
+    NPC_MAWSWORN_VANGUARD                           = 177154,
+    NPC_DECREPIT_ORBS                               = 178008,
 };
 
 enum SanctumOfDominationGameObjectIds
@@ -98,6 +117,13 @@ enum SanctumOfDominationEvents
     EVENT_RESET_PLAYERS_ON_SYLVANAS                 = 1
 };
 
+enum Actions_2
+{
+    ACTION_WINDS_CASTED_1 = 1,
+};
+
+
+
 enum SanctumOfDominationActions
 {
     ACTION_START_SYLVANAS_INTRO                     = 50
@@ -105,9 +131,10 @@ enum SanctumOfDominationActions
 
 enum SanctumOfDominationAreas
 {
-    AREA_PINNACLE_OF_DOMINANCE                      = 13653,
-    AREA_EDGE_OF_THE_ABYSS                          = 13654,
-    AREA_THE_CRUCIBLE                               = 13655
+    AREA_PINNACLE_OF_DOMINANCE = 13653,
+    AREA_EDGE_OF_THE_ABYSS = 13654,
+    AREA_THE_CRUCIBLE = 13655,
+    AREA_SANCTUM_OF_DOMINATION = 13561
 };
 
 enum SanctumofDominationWorldStates
